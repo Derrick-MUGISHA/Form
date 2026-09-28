@@ -1,39 +1,201 @@
 <!doctype html>
-
 <html lang="en">
-    <head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="A small website built by hand with nothing but HTML and CSS — semantic markup, flexbox, grid, forms and a responsive dashboard layout."
+    />
     <title>My First Website</title>
-    <link rel="stylesheet" href="/css/styles.css" />
+    <link rel="stylesheet" href="css/styles.css" />
   </head>
-  
-  <body>
-  <header class="header">
-    <h1>My Registration <form (ngSubmit)="onSubmit()" #form="ngForm">
-    </form></h1>
-    <nav>
-      <a href="/form.html">Form</a>
-    </nav>
-  </header>
 
-  <main>
-    <article>
-      <h2>Understanding HTML</h2>
-      <p>Sematic element are critical for a modern web page</p>
-    </article>
-    <article>
-      <h2>Understanding CSS</h2>
-      <p>CSS is the styling language for the web</p>
-    </article>  
-    </article>
-  </main>
-  
+  <body class="intro-page">
+    <a class="skip-link" href="#main">Skip to main content</a>
 
+    <!-- A plain top bar — no dashboard shell on this page. -->
+    <header class="intro-header">
+      <div class="wrap">
+        <p class="brand">My First Website <span>· HTML &amp; CSS</span></p>
+        
+        <nav class="intro-nav" aria-label="Main navigation">
+          <a href="index.html" aria-current="page">Home</a>
+          <a href="dashboard.html">Dashboard</a>
+          <a href="index2.html">Selectors</a>
+          <a href="flex.html">Flexbox</a>
+          <a href="grid.html">Grid</a>
+          <a href="form.html">Registration</a>
+          <a href="docs.html">Docs</a>
+        </nav>
+      </div>
+    </header>
 
-  <footer>
-    <p>© 2026 My Tech Blog</p>
-  </footer>
+    <main id="main">
+      <!-- ================= HERO ================= -->
+      <section class="hero">
+        <div class="wrap">
+          <p class="eyebrow">A learning project</p>
+          <h1>Six practice files, rebuilt into one website.</h1>
+          <p>
+            This site was assembled from the exercises of an HTML and CSS
+            course: semantic markup, a registration form, selectors, flexbox and
+            a grid dashboard sketch. Nothing here runs JavaScript every
+            layout, every breakpoint and every interaction is plain CSS.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-solid" href="dashboard.html">Enter the dashboard</a>
+            <a class="btn" href="docs.html">Read the documentation</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= WHAT'S INSIDE ================= -->
+      <section class="band">
+        <div class="wrap">
+          <h2>What's inside</h2>
+          <p>
+            Five pages sit behind the dashboard layout, plus this introduction
+            and a documentation page that explains every part of the build.
+          </p>
+
+          <div class="intro-grid">
+            <a class="intro-card" href="dashboard.html">
+              <span class="num" aria-hidden="true">1</span>
+              <h3>Dashboard</h3>
+              <p>
+                The overview page. It shows the six-region layout that every
+                lesson page reuses: sidebar, topbar, main panel, history,
+                profiles and user information.
+              </p>
+              <span class="go">Open the dashboard →</span>
+            </a>
+
+            <a class="intro-card" href="index2.html">
+              <span class="num" aria-hidden="true">2</span>
+              <h3>CSS Selectors</h3>
+              <p>
+                Descendant, child and adjacent-sibling selectors, with a live
+                demo where the paragraphs carry no classes at all
+                the selectors do the choosing.
+              </p>
+              <span class="go">See the demo →</span>
+            </a>
+
+            <a class="intro-card" href="flex.html">
+              <span class="num" aria-hidden="true">3</span>
+              <h3>Flexbox</h3>
+              <p>
+                Laying items out along a single axis, and what
+                <code>order</code>, <code>flex-grow</code> and
+                <code>align-self</code> actually change.
+              </p>
+              <span class="go">Try the flex box →</span>
+            </a>
+
+            <a class="intro-card" href="grid.html">
+              <span class="num" aria-hidden="true">4</span>
+              <h3>Grid</h3>
+              <p>
+                The original 5 × 5 sketch, and how it turned into the named-area
+                layout holding the rest of the site together.
+              </p>
+              <span class="go">Inspect the grid →</span>
+            </a>
+
+            <a class="intro-card" href="form.html">
+              <span class="num" aria-hidden="true">5</span>
+              <h3>Registration</h3>
+              <p>
+                A form with labelled inputs, a select, a radio group and a
+                textarea validated entirely by the browser, with no script
+                behind it.
+              </p>
+              <span class="go">Fill it in →</span>
+            </a>
+
+            <a class="intro-card" href="docs.html">
+              <span class="num" aria-hidden="true">6</span>
+              <h3>Documentation</h3>
+              <p>
+                The long read: what every file does, how the layout grid is
+                wired, what each CSS section is for, and how the three
+                breakpoints reflow the page.
+              </p>
+              <span class="go">Read the docs →</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= HOW IT IS BUILT ================= -->
+      <section class="band band-tint">
+        <div class="wrap">
+          <h2>How it is built</h2>
+          <p>
+            Three decisions shape the whole project. The documentation walks
+            through each of them in detail.
+          </p>
+
+          <ol class="steps">
+            <li>
+              <b>One layout, reused everywhere</b>
+              <span>
+                A single CSS grid with six named areas <code>side</code>,
+                <code>nav</code>, <code>main</code>, <code>hist</code>,
+                <code>prof</code> and <code>user</code> is declared once in
+                the stylesheet. Every page fills the same slots, so navigating
+                never moves the furniture around you.
+              </span>
+            </li>
+            <li>
+              <b>One stylesheet, in fourteen sections</b>
+              <span>
+                <code>css/styles.css</code> holds design tokens, the shell, each
+                panel, the form, the lesson demos, the breakpoints and a print
+                rule. Lesson demos are scoped to their own class so an
+                experiment can never leak into the layout.
+              </span>
+            </li>
+            <li>
+              <b>Responsive by reflow, not by hiding</b>
+              <span>
+                At 1180px the history panel moves below the main column; at
+                860px everything becomes one column and the sidebar turns into a
+                scrollable strip of pills. Nothing is hidden on small screens                 it is only rearranged.
+              </span>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- ================= THIS PAGE ================= -->
+      <section class="band">
+        <div class="wrap">
+          <h2>About this page</h2>
+          <p>
+            This introduction deliberately does <em>not</em> use the dashboard
+            shell. A landing page has one job say what the site is and send
+            you somewhere useful so it is a simple centred column: a header, a
+            hero, a few bands of content and a footer. The dashboard layout
+            starts on the next page.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="intro-footer">
+      <div class="wrap">
+        <p>© 2026 My Tech Blog · Built by hand with HTML and CSS.</p>
+        <nav aria-label="Footer navigation">
+          <a href="dashboard.html">Dashboard</a>
+          <a href="index2.html">Selectors</a>
+          <a href="flex.html">Flexbox</a>
+          <a href="grid.html">Grid</a>
+          <a href="form.html">Registration</a>
+          <a href="docs.html">Docs</a>
+        </nav>
+      </div>
+    </footer>
   </body>
-  
 </html>
